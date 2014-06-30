@@ -38,7 +38,7 @@ class grafana (
     cwd     => $tmp,
     path    => '/sbin:/bin:/usr/bin',
     command => "\\cp -rfT grafana-${version} ${destination_dir}",
-    creates => "${tmp}/grafana-${version}/index.html",
+    creates => "${destination_dir}/index.html",
     require => [Exec['untar grafana'], File['grafana home']],
   }
 }
