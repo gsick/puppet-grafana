@@ -34,10 +34,10 @@ class grafana (
     require => Exec['download grafana'],
   }
 
-  exec { 'move to dest':
+  exec { 'grafana install':
     cwd     => $tmp,
     path    => '/sbin:/bin:/usr/bin',
-    command => "\\cp -rfT grafana-${version} ${destination_dir}",
+    command => "cp -rfT grafana-${version} ${destination_dir}",
     creates => "${destination_dir}/index.html",
     require => [Exec['untar grafana'], File['grafana home']],
   }
