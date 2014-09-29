@@ -1,5 +1,5 @@
 class grafana (
-  $version         = '1.6.1',
+  $version         = '1.8.0',
   $destination_dir = '/usr/local/grafana',
   $tmp             = '/tmp',
 ) {
@@ -38,7 +38,7 @@ class grafana (
     cwd     => $tmp,
     path    => '/sbin:/bin:/usr/bin',
     command => "cp -rfT grafana-${version} ${destination_dir}",
-    creates => "${destination_dir}/index.html",
+    #creates => "${destination_dir}/index.html",
     require => [Exec['untar grafana'], File['grafana home']],
   }
 }
