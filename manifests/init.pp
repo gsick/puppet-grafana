@@ -1,5 +1,5 @@
 class grafana (
-  $version         = '1.8.0',
+  $version         = '1.8.1',
   $destination_dir = '/usr/local/grafana',
   $tmp             = '/tmp',
 ) {
